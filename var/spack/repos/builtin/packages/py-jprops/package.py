@@ -26,7 +26,7 @@ from spack import *
 
 
 class PyJprops(PythonPackage):
-    """FIXME: Put a proper description of your package here."""
+    """Java properties file parser for Python"""
 
     homepage = "https://github.com/mgood/jprops/"
     url      = "https://pypi.org/packages/source/j/jprops/jprops-2.0.2.tar.gz"
