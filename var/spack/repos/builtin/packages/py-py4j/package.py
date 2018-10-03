@@ -30,8 +30,9 @@ class PyPy4j(PythonPackage):
     objects."""
 
     homepage = "https://www.py4j.org/"
-    url = "https://pypi.io/packages/source/p/py4j/py4j-0.10.4.tar.gz"
+    url = "https://pypi.io/packages/source/p/py4j/py4j-0.10.4.zip"
 
+    version('0.10.6', 'dfff2b4920d2e1114871e6df5673bd9c')
     version('0.10.4', 'de1ce072fb8d5bff8aba537b1700ace4')
     version('0.10.3', '6c86aebb4f1cdd4bf192b16c8a8fe8e4')
 
