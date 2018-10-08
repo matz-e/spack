@@ -22,6 +22,9 @@
 # License along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 ##############################################################################
+import os
+import re
+
 from spack import *
 
 
@@ -40,7 +43,8 @@ class Spykfunc(PythonPackage):
     depends_on('py-cython', type='run')
     depends_on('py-setuptools', type=('build', 'run'))
 
-    depends_on('spark', type='run')
+    depends_on('spark@2.3.2rc2', type='run')
+    depends_on('hadoop@2.9.0', type='run')
 
     depends_on('py-bb5', type=('build', 'run'))
     depends_on('py-docopt', type=('build', 'run'))
@@ -54,6 +58,31 @@ class Spykfunc(PythonPackage):
     depends_on('py-numpy', type=('build', 'run'))
     depends_on('py-pandas', type=('build', 'run'))
     depends_on('py-progress', type=('build', 'run'))
-    depends_on('py-py4j', type=('build', 'run'))
+    depends_on('py-py4j@0.10.7', type=('build', 'run'))
     depends_on('py-pyarrow+parquet', type=('build', 'run'))
+    depends_on('py-pyspark@2.3.2rc2', type=('build', 'run'))
     depends_on('py-sparkmanager', type=('build', 'run'))
+
+    def setup_environment(self, spack_env, run_env):
+        # This is a rather ugly setup to run spykfunc without having to
+        # activate all python packages.
+        run_env.set('HADOOP_HOME', self.spec['hadoop'].prefix)
+        run_env.set('JAVA_HOME', self.spec['java'].prefix)
+        run_env.set('SPARK_HOME', self.spec['spark'].prefix)
+
+        run_env.prepend_path('PATH', os.path.join(self.spec['py-sparkmanager'].prefix, 'bin'))
+        run_env.prepend_path('PATH', os.path.join(self.spec['hadoop'].prefix, 'bin'))
+        run_env.prepend_path('PATH', os.path.join(self.spec['spark'].prefix, 'bin'))
+
+        hadoop_env = dict(os.environ)
+        hadoop_env['JAVA_HOME'] = self.spec['java'].prefix
+        hadoop = self.spec['hadoop'].command
+        hadoop_classpath = hadoop('classpath', output=str, env=hadoop_env)
+        # Remove whitespaces, as they can compromise syntax in
+        # module files
+        hadoop_classpath = re.sub(r'[\s+]', '', hadoop_classpath)
+        run_env.set('SPARK_DIST_CLASSPATH', hadoop_classpath)
+
+        for m in spack_env.env_modifications:
+            if m.name == 'PYTHONPATH':
+                run_env.prepend_path('PYTHONPATH', m.value)
