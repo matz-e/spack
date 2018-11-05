@@ -1,188 +1,287 @@
 packages:
-    autoconf:
-        paths:
-            autoconf@2.69: /usr
-        version: [2.63]
-    automake:
-        paths:
-            automake@1.13.4: /usr
-        version: [1.13.4]
-    bison:
-        paths:
-            bison@3.0.4: /usr
-        version: [3.0.4]
-    boost:
-        paths:
-            boost@1.67.0: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/18-06-2018/install/linux-rhel7-x86_64/gcc-6.4.0/boost-1.67.0-6skhmz
-        version: [1.67.0]
-    bzip2:
-        paths:
-            bzip2@1.0.6: /usr
-        version: [1.0.6]
-    cairo:
-        paths:
-            cairo@1.8.10: /usr
-        version: [1.8.10]
-    cmake:
-        paths:
-            cmake@3.12.0: /gpfs/bbp.cscs.ch/apps/tools/install/linux-rhel7-x86_64/gcc-4.8.5/cmake-3.12.0-ybmxsc
-        version: [3.12.0]
-    cuda:
-        modules:
-            cuda@9.0.176: cuda/9.0.176
-        version: [9.0.176]
-    curl:
-        paths:
-            curl@7.29.0: /usr
-        version: [7.29.0]
-    flex:
-        paths:
-            flex@2.5.37: /usr
-        version: [2.5.37]
-    fontconfig:
-        paths:
-            fontconfig@2.10.95: /usr
-        version: [2.10.95]
-    glib:
-        paths:
-            glib@2.50.3: /usr
-        version: [2.50.3]
-    gtkplus:
-        paths:
-            gtkplus@2.24.31: /usr
-        version: [2.24.31]
-    hdf5:
-        paths:
-            hdf5@1.8.12~mpi~hl: /usr
-            hdf5@1.10.2+hl+mpi+shared+szip: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/18-06-2018/install/linux-rhel7-x86_64/gcc-6.4.0/hdf5-1.10.2-dueuws
-        version: [1.10.2,1.8.12]
-    hpe-mpi:
-        modules:
-            hpe-mpi: hpe-mpi/2.16
-        version: [2.16]
-    hwloc:
-        paths:
-            hwloc@1.11.2: /usr
-        version: [1.11.2]
-    intel-mkl:
-        paths:
-            intel-mkl@2018.1.163: /gpfs/bbp.cscs.ch/apps/tools/install/linux-rhel7-x86_64/gcc-4.8.5/intel-mkl-2018.1.163-l32qhs
-        version: [2018.1.163]
-    intel-mpi:
-        modules:
-            intel-mpi@2018.1.163: intel-mpi/2018.1.163
-        version: [2018.1.163]
-    intel-parallel-studio:
-        modules:
-            intel-parallel-studio@cluster.2018.1: intel-parallel-studio/cluster.2018.1
-        buildable: False
-        version: [cluster.2018.1]
-    libjpeg:
-        paths:
-            libjpeg@1.2.90: /usr
-        version: [1.2.90]
-    libgcrypt:
-        paths:
-            libgcrypt@1.5.3: /usr
-        version: [1.5.3]
-    libmng:
-        paths:
-            libmng@1.0.10: /usr
-        version: [1.0.10]
-    libtool:
-        paths:
-            libtool@2.4.2: /usr
-        version: [2.4.2]
-    libxml2:
-        paths:
-            libxml2@2.9.1: /usr
-        version: [2.9.1]
-    m4:
-        paths:
-            m4@1.4.16: /usr
-        version: [1.4.16]
-    mvapich2:
-        modules:
-            mvapich2@ime: mvapich2/ime
-        version: [ime]
-    ncurses:
-        paths:
-            ncurses@5.9: /usr
-        version: [5.9]
-    omega-h:
-        variants: +throw
-    openssl:
-        paths:
-            openssl@1.0.2k: /usr
-        version: [1.0.2k]
-    openmpi:
-        modules:
-            openmpi@ime: openmpi/ime
-        version: [ime]
-    pango:
-        paths:
-            pango@1.40.4: /usr
-        version: [1.40.4]
-    pcre:
-        paths:
-            pcre@8.32+jit+utf: /usr
-        version: [8.32]
-    perl:
-        paths:
-            perl@5.16.3: /usr
-        version: [5.16.3]
-    petsc:
-        variants: +patchmpi64
-    pkg-config:
-        paths:
-            pkg-config@0.27.1: /usr
-        version: [0.27.1]
-    python:
-        paths:
-            python@2.7.13: /usr
-        version: [2.7.13]
-    py-pygtk:
-        paths:
-            py-pygtk@2.24.0: /usr
-        version: [2.24.0]
-    slurm:
-        paths:
-            slurm@17.02: /usr
-        buildable: False
-        version: [17.02]
-    swig:
-        paths:
-            swig@2.0.10: /usr
-        version: [2.0.10]
-    steps:
-        variants: +lapack+petsc+mpi^python@2.7.15
-    tar:
-        paths:
-            tar@1.26: /usr
-        version: [1.26]
-    tcl:
-        paths:
-            tcl@8.5.13: /usr
-        version: [8.5.13]
-    touchdetector:
-        compiler: [gcc]
-    trilinos:
-        variants: +kokkos+teuchos~amesos~hypre~superlu-dist~mumps~metis~suite-sparse
-        version: [xsdk-0.4.0-rc1]
-    tk:
-        paths:
-            tk@8.5.13: /usr
-        version: [8.5.13]
-    xz:
-        paths:
-            xz@5.2: /usr
-        version: [5.2]
-    zlib:
-        paths:
-            zlib@1.2.7+shared~static: /usr
-        version: [1.2.7]
-    all:
-        compiler: [intel, gcc@6.4.0]
-        providers:
-            mpi: [hpe-mpi, intel-mpi]
-            scalapack: [intel-mkl, netlib-scalapack]
+  autoconf:
+    paths:
+      autoconf@2.69: /usr
+    version: ['2.69', '2.63']
+  automake:
+    paths:
+      automake@1.13.4: /usr
+    version: [1.13.4]
+  binutils:
+    paths:
+      binutils@2.29.1: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/binutils-2.29.1-quhkkp
+  bison:
+    paths:
+      bison@3.0.4: /usr
+    version: [3.0.4]
+  boost:
+    paths:
+      boost@1.67.0: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/18-06-2018/install/linux-rhel7-x86_64/gcc-6.4.0/boost-1.67.0-6skhmz
+      boost@1.67.0 ~graph: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/18-06-2018/install/linux-rhel7-x86_64/gcc-6.4.0/boost-1.67.0-6skhmz
+    version: [1.67.0]
+  bzip2:
+    paths:
+      bzip2@1.0.6: /usr
+    version: [1.0.6]
+  cairo:
+    paths:
+      cairo@1.8.10: /usr
+    version: [1.8.10]
+  cmake:
+    paths:
+      cmake@3.12.0: /gpfs/bbp.cscs.ch/apps/tools/install/linux-rhel7-x86_64/gcc-4.8.5/cmake-3.12.0-ybmxsc
+    version: [3.12.0]
+  cuda:
+    modules:
+      cuda@9.0.176: cuda/9.0.176
+    version: [9.0.176]
+  curl:
+    paths:
+      curl@7.29.0: /usr
+    version: [7.29.0]
+  flatbuffers:
+    paths:
+      flatbuffers@1.8.0 build_type=Release: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/flatbuffers-1.8.0-2nsezd
+  flex:
+    paths:
+      flex@2.5.37: /usr
+    version: [2.5.37]
+  fontconfig:
+    paths:
+      fontconfig@2.10.95: /usr
+    version: [2.10.95]
+  freetype:
+    paths:
+      freetype@2.7.1: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/freetype-2.7.1-lmnb7p
+  gdbm:
+    paths:
+      gdbm@1.14.1: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/gdbm-1.14.1-553gov
+  gettext:
+    paths:
+      gettext@0.19.8.1: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/gettext-0.19.8.1-zheggu
+  glib:
+    paths:
+      glib@2.50.3: /usr
+    version: [2.50.3]
+  gtkplus:
+    paths:
+      gtkplus@2.24.31: /usr
+    version: [2.24.31]
+  # hdf5:
+  #   paths:
+  #     hdf5@1.8.12~mpi~hl: /usr
+  #     hdf5@1.10.2+hl+mpi+shared+szip: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/18-06-2018/install/linux-rhel7-x86_64/gcc-6.4.0/hdf5-1.10.2-dueuws
+  #     hdf5@1.10.2 +hl+szip: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/18-06-2018/install/linux-rhel7-x86_64/gcc-6.4.0/hdf5-1.10.2-dueuws
+  #   version: [1.8.12, 1.10.2]
+  hpe-mpi:
+    modules:
+      hpe-mpi: hpe-mpi/2.16
+    version: ['2.16']
+    paths:
+      hpe-mpi@2.16: /opt/hpe/hpc/mpt/mpt-2.16
+  hwloc:
+    paths:
+      hwloc@1.11.2: /usr
+    version: [1.11.2]
+  intel-mkl:
+    paths:
+      intel-mkl@2018.1.163: /gpfs/bbp.cscs.ch/apps/tools/install/linux-rhel7-x86_64/gcc-4.8.5/intel-mkl-2018.1.163-l32qhs
+    version: [2018.1.163]
+  intel-mpi:
+    modules:
+      intel-mpi@2018.1.163: intel-mpi/2018.1.163
+    version: [2018.1.163]
+  intel-parallel-studio:
+    modules:
+      intel-parallel-studio@cluster.2018.1: intel-parallel-studio/cluster.2018.1
+    buildable: false
+    version: [cluster.2018.1]
+  jdk:
+    paths:
+      jdk@8u181-b13: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/jdk-8u181-b13-xrad7r
+  libevent:
+    paths:
+      libevent@2.0.21: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/libevent-2.0.21-vw2dby
+  libgcrypt:
+    paths:
+      libgcrypt@1.5.3: /usr
+    version: [1.5.3]
+  libjpeg:
+    paths:
+      libjpeg@1.2.90: /usr
+    version: [1.2.90]
+  libmng:
+    paths:
+      libmng@1.0.10: /usr
+    version: [1.0.10]
+  libpng:
+    paths:
+      libpng@1.6.34: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/libpng-1.6.34-lmthat
+  libtool:
+    paths:
+      libtool@2.4.2: /usr
+    version: [2.4.2]
+  libxml2:
+    paths:
+      libxml2@2.9.1: /usr
+    version: [2.9.1]
+  m4:
+    paths:
+      m4@1.4.16: /usr
+    version: [1.4.16]
+  mvapich2:
+    modules:
+      mvapich2@ime: mvapich2/ime
+    version: [ime]
+  ncurses:
+    paths:
+      ncurses@5.9: /usr
+    version: ['5.9']
+  omega-h:
+    variants: +throw
+  openmpi:
+    modules:
+      openmpi@ime: openmpi/ime
+    version: [ime]
+  openssl:
+    paths:
+      openssl@1.0.2k: /usr
+    version: [1.0.2k]
+  pango:
+    paths:
+      pango@1.40.4: /usr
+    version: [1.40.4]
+  parquet:
+    paths:
+      parquet@1.4.0: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/parquet-1.4.0-unaukd
+  pcre:
+    paths:
+      pcre@8.32+jit+utf: /usr
+    version: [8.32]
+  perl:
+    paths:
+      perl@5.16.3: /usr
+    version: [5.16.3]
+  petsc:
+    variants: +patchmpi64
+  pkg-config:
+    paths:
+      pkg-config@0.27.1: /usr
+    version: [0.27.1]
+  py-arrow:
+    paths:
+      py-arrow@0.10.0: /activated
+  py-cycler:
+    paths:
+      py-cycler@0.10.0: /activated
+  py-dateutil:
+    paths:
+      py-dateutil@2.5.2: /activated
+  py-h5py:
+    paths:
+      py-h5py@2.7.1+mpi: /activated
+  py-kiwisolver:
+    paths:
+      py-kiwisolver@1.0.1: /activated
+  py-lazy-property:
+    paths:
+      py-lazy-property@0.0.1: /activated
+  py-matplotlib:
+    paths:
+      py-matplotlib@2.2.2: /activated
+  py-mpi4py:
+    paths:
+      py-mpi4py@3.0.0: /activated
+  py-numpy:
+    paths:
+      py-numpy@1.14.3: /activated
+  py-pillow:
+    paths:
+      py-pillow@5.1.0: /activated
+  py-pygtk:
+    paths:
+      py-pygtk@2.24.0: /usr
+    version: [2.24.0]
+  py-pyparsing:
+    paths:
+      py-pyparsing@2.2.0: /activated
+  py-pytz:
+    paths:
+      py-pytz@2017.2: /activated
+  py-setuptools:
+    paths:
+      py-setuptools@39.2.0: /activated
+  py-six:
+    paths:
+      py-six@1.11.0: /activated
+  python:
+    paths:
+      python@2.7.13: /usr
+      python@3.6.5: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/python-3.6.5-52y6sb
+    version: [3.6.5, 2.7.13]
+    modules:
+      python@2.7.13: python/2.7.13
+      python@3.6.5: python/3.6.5
+  qhull:
+    paths:
+      qhull@2015.2: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/qhull-2015.2-bfb7kw
+  rapidjson:
+    paths:
+      rapidjson@1.1.0: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/rapidjson-1.1.0-ru4pi5
+  readline:
+    paths:
+      readline@7.0: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/readline-7.0-yjqqub
+  slurm:
+    paths:
+      slurm@17.02: /usr
+    buildable: false
+    version: [17.02]
+  snappy:
+    paths:
+      snappy@1.1.7 ~shared: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/snappy-1.1.7-bcgxgb
+  sqlite:
+    paths:
+      sqlite@3.7.17: /usr
+  steps:
+    variants: +lapack+petsc+mpi^python@2.7.15
+  swig:
+    paths:
+      swig@2.0.10: /usr
+    version: [2.0.10]
+  tar:
+    paths:
+      tar@1.26: /usr
+    version: ['1.26']
+  tcl:
+    paths:
+      tcl@8.5.13: /usr
+    version: [8.5.13]
+  thrift:
+    paths:
+      thrift@0.11.0: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/thrift-0.11.0-km57ne
+  tk:
+    paths:
+      tk@8.5.13: /usr
+    version: [8.5.13]
+  touchdetector:
+    compiler: [gcc]
+  trilinos:
+    variants: +kokkos+teuchos~amesos~hypre~superlu-dist~mumps~metis~suite-sparse
+    version: [xsdk-0.4.0-rc1]
+  xz:
+    paths:
+      xz@5.2: /usr
+    version: ['5.2']
+  zlib:
+    paths:
+      zlib@1.2.7+shared~static: /usr
+      zlib@1.2.11: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/zlib-1.2.11-w43e56
+    version: [1.2.7, 1.2.11]
+  zstd:
+    paths:
+      zstd@1.3.0: /gpfs/bbp.cscs.ch/apps/hpc/spack-deployments/2018-09-28/install/linux-rhel7-x86_64/gcc-6.4.0/zstd-1.3.0-hbbgnv
+  all:
+    compiler: [intel, gcc@6.4.0]
+    providers:
+      mpi: [hpe-mpi, intel-mpi]
+      scalapack: [intel-mkl, netlib-scalapack]
