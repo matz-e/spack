@@ -56,4 +56,4 @@ class DarshanRuntime(Package):
 
     def setup_run_environment(self, env):
         # default path for log file, could be user or site specific setting
-        env.set('DARSHAN_LOG_DIR_PATH', "darshan-logs")
+        env.set('DARSHAN_LOG_DIR_PATH', 'darshan-logs')
